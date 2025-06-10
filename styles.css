@@ -1,4 +1,4 @@
-@import url("https://fonts.google.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
     margin: 0;
@@ -30,7 +30,7 @@ h6 {
 }
 
 p {
-    font: size 16px;
+    font-size: 16px;
     color: #465b52;
     margin: 15px 0 20px 0;
 }
@@ -53,7 +53,11 @@ button.normal {
     cursor: pointer;
     border: none;
     outline: none;
-    transition: 0.2s;
+    transition: 0.2s ease;
+}
+
+button.normal:hover {
+    background-color: #3b4b72;
 }
 
 button.white {
@@ -65,11 +69,16 @@ button.white {
     cursor: pointer;
     border: 1px solid #e0bce5;
     outline: none;
-    transition: 0.2s;
+    transition: 0.2s ease;
+}
+
+button.white:hover {
+    background-color: rgba(224, 188, 229, 0.1);
 }
 
 body {
     width: 100%;
+    background-color: #fafafa;
 }
 
 #header {
@@ -140,7 +149,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    background-position: center;
+    background-size: cover;
 }
 
 #fir-pg h3 {
@@ -167,6 +176,11 @@ body {
     cursor: pointer;
     font-weight: 700;
     font-size: 15px;
+    transition: 0.2s ease;
+}
+
+#fir-pg button:hover {
+    opacity: 0.9;
 }
 
 #features {
@@ -174,16 +188,20 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 #features .fe-box {
-    width: 140px;
+    flex: 1 1 140px;
+    max-width: 140px;
     text-align: center;
     padding: 25px 15px;
     box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
     border: 1px solid #cce7d0;
     border-radius: 4px;
-    margin: 15px 0;
+    margin: 15px auto;
+    transition: 0.2s ease;
+    background-color: #fff;
 }
 
 #features .fe-box:hover {
@@ -202,6 +220,7 @@ body {
     border-radius: 4px;
     color: #3b4b6c;
     background-color: #7a82f8;
+    font-weight: 600;
 }
 
 #features .fe-box:nth-child(2) h5 {
@@ -226,51 +245,78 @@ body {
 
 #product1 {
     text-align: center;
+    padding: 40px 80px;
+    background-color: #f9f9f9;
+}
+
+#product1 h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #38355f;
+}
+
+#product1 .divider {
+    width: 80px;
+    height: 4px;
+    background-color: #515d8c;
+    margin: 0 auto 40px auto;
+    border-radius: 2px;
 }
 
 #product1 .prd-cont {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 #product1 .prd {
-    width: 23%;
-    min-width: 250px;
-    padding: 10px 12px;
+    flex: 1 1 calc(25% - 40px);
+    max-width: calc(25% - 40px);
+    min-width: 240px;
+    padding: 15px 12px;
+    background-color: #fff;
     border: 1px solid #cce7d0;
-    border-radius: 25px;
+    border-radius: 12px;
     cursor: pointer;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-    margin: 15px 0;
-    transition: 0.2s ease;
+    transition: 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #product1 .prd:hover {
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+    transform: translateY(-5px);
 }
 
 #product1 .prd img {
-    width: 100%;
-    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
 }
 
 #product1 .prd .des {
-    text-align: start;
+    text-align: center;
     padding: 10px 0;
+    flex: 1;
 }
 
 #product1 .prd .des span {
     color: #585870;
     font-size: 12px;
+    display: block;
 }
 
 #product1 .prd .des h5 {
     padding-top: 7px;
     color: #38355f;
     font-size: 14px;
+    font-weight: 600;
 }
 
 #product1 .prd .des i {
@@ -289,14 +335,22 @@ body {
     width: 40px;
     height: 40px;
     line-height: 40px;
-    border-radius: 50px;
+    border-radius: 50%;
     background-color: #e8f6ea;
     font-weight: 500;
     color: #7a82f8;
     border: 1px solid #cce7d0;
     position: absolute;
-    bottom: 20px;
-    right: 10px;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+
+#product1 .prd .cart:hover {
+    background-color: #d4eada;
 }
 
 #banner {
@@ -336,6 +390,8 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 80px;
 }
 
 #sm-banner .banner-box {
@@ -344,12 +400,15 @@ body {
     justify-content: center;
     align-items: flex-start;
     background-image: url("b1.png");
-    min-width: 500px;
+    flex: 1 1 calc(50% - 20px);
+    min-width: 300px;
     height: 50vh;
     background-size: cover;
     background-position: center;
     padding: 30px;
-    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 #sm-banner .banner-box2 {
@@ -366,6 +425,7 @@ body {
     color: #fabdfd;
     font-size: 28px;
     font-weight: 800;
+    margin-bottom: 8px;
 }
 
 #sm-banner span {
@@ -375,16 +435,28 @@ body {
     padding-bottom: 15px;
 }
 
-#sm-banner .banner-box:hover button {
+#sm-banner .banner-box button {
     background-color: #f2a5d9;
     border: 1px solid #e9cbe1;
+    color: #2f2c51;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: 0.2s ease;
+    position: absolute;
+    bottom: 30px;
+}
+
+#sm-banner .banner-box:hover button {
+    background-color: #e08ac2;
 }
 
 #banner3 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 0 80px;
+    gap: 20px;
+    padding: 0 80px 40px 80px;
 }
 
 #banner3 .banner-box {
@@ -393,12 +465,15 @@ body {
     justify-content: center;
     align-items: flex-start;
     background-image: url("b3.png");
-    min-width: 30%;
-    height: 30vh;
+    flex: 1 1 calc(33% - 20px);
+    min-height: 30vh;
     background-size: cover;
     background-position: center;
     padding: 20px;
-    margin-bottom: 20px;
+    border-radius: 8px;
+    color: #f7f6f7;
+    position: relative;
+    overflow: hidden;
 }
 
 #banner3 .banner-box2 {
@@ -431,12 +506,15 @@ body {
     background-position: 20% 30%;
     background-color: #40709b;
     border-radius: 4px;
+    padding: 40px 80px;
+    margin: 40px 0;
 }
 
 #newsletter h4 {
     font-size: 22px;
     font-weight: 700;
     color: #cdd7fb;
+    margin-bottom: 10px;
 }
 
 #newsletter p {
@@ -460,24 +538,33 @@ body {
     font-size: 14px;
     width: 100%;
     border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius: 4px 0 0 4px;
     outline: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
 }
 
 #newsletter button {
     background-color: #3b4b6c;
     color: #cce7d0;
     white-space: nowrap;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    padding: 0 1.25em;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#newsletter button:hover {
+    background-color: #2e3a54;
 }
 
 footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 60px 80px;
+    background-color: #f1f2f6;
+    color: #465b52;
 }
 
 footer .col {
@@ -485,6 +572,7 @@ footer .col {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
+    flex: 1 1 200px;
 }
 
 footer .logo {
@@ -494,6 +582,7 @@ footer .logo {
 footer h4 {
     font-size: 14px;
     padding-bottom: 20px;
+    font-weight: 600;
 }
 
 footer p {
@@ -506,6 +595,11 @@ footer a {
     text-decoration: none;
     color: #465b52;
     margin-bottom: 10px;
+    transition: 0.2s ease;
+}
+
+footer a:hover {
+    color: #2f2c51;
 }
 
 footer .follow {
@@ -516,6 +610,11 @@ footer .follow i {
     color: #465b52;
     padding-right: 4px;
     cursor: pointer;
+    transition: 0.2s ease;
+}
+
+footer .follow i:hover {
+    color: #2f2c51;
 }
 
 footer .install .row img {
@@ -527,14 +626,12 @@ footer .install img {
     margin: 10px 0 15px 0;
 }
 
-footer .follow i:hover,
-footer a:hover {
-    color: #2f2c51;
-}
-
 footer .copyright {
     width: 100%;
     text-align: center;
+    padding-top: 20px;
+    font-size: 13px;
+    color: #7a7a7a;
 }
 
 #page-header {
@@ -551,11 +648,20 @@ footer .copyright {
 
 #page-header h2,
 #page-header p {
-    color: #f9f3fe;
+    color: #2d335f;
+}
+
+#page-header.blog-header {
+    background-image: url("blog1.png");
+}
+
+#page-header.about-header {
+    background-image: url("about.png");
 }
 
 #pagination {
     text-align: center;
+    margin: 40px 0;
 }
 
 #pagination a {
@@ -563,8 +669,13 @@ footer .copyright {
     background-color: #625cd2;
     padding: 15px 20px;
     border-radius: 4px;
-    color: #2f2c51;
+    color: #f8f8fa;
     font-weight: 600;
+    transition: 0.2s ease;
+}
+
+#pagination a:hover {
+    background-color: #4e42a8;
 }
 
 #pagination a i {
@@ -575,6 +686,10 @@ footer .copyright {
 #prodetails {
     display: flex;
     margin-top: 20px;
+    padding: 40px 80px;
+    gap: 40px;
+    background-color: #fff;
+    border-radius: 8px;
 }
 
 #prodetails .single-pro-image {
@@ -585,11 +700,19 @@ footer .copyright {
 .small-img-group {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
 }
 
 .small-img-col {
-    flex-basis: 24%;
+    flex: 1;
     cursor: pointer;
+}
+
+#prodetails .single-pro-image img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 #prodetails .single-pro-details {
@@ -599,22 +722,29 @@ footer .copyright {
 
 #prodetails .single-pro-details h6 {
     color: #242f4d;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 #prodetails .single-pro-details h4 {
     padding: 20px 0 20px 0;
     color: #515d8c;
+    font-size: 24px;
 }
 
 #prodetails .single-pro-details h2 {
     font-size: 20px;
     color: #464d5b;
+    margin-bottom: 15px;
 }
 
 #prodetails .single-pro-details select {
     display: block;
     padding: 5px 10px;
     margin-bottom: 10px;
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+    outline: none;
 }
 
 #prodetails .single-pro-details input {
@@ -623,24 +753,28 @@ footer .copyright {
     padding-left: 10px;
     font-size: 16px;
     margin-right: 10px;
-}
-
-#prodetails .single-pro-details input:focus {
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
     outline: none;
 }
 
 #prodetails .single-pro-details button {
     background: #3e3e55;
     color: #b3bcd4;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#prodetails .single-pro-details button:hover {
+    background: #2f2f42;
 }
 
 #prodetails .single-pro-details span {
     line-height: 25px;
     color: #465b52;
-}
-
-#page-header.blog-header {
-    background-image: url("blog1.png");
 }
 
 #blog {
@@ -664,6 +798,7 @@ footer .copyright {
     width: 100%;
     height: 300px;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 #blog .blog-details {
@@ -676,7 +811,7 @@ footer .copyright {
     color: #464d5b;
     font-weight: 700;
     position: relative;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 #blog .blog-details a::after {
@@ -687,13 +822,14 @@ footer .copyright {
     position: absolute;
     top: 4px;
     right: -60px;
+    transition: 0.3s ease;
 }
 
 #blog .blog-details a:hover {
     color: #40709b;
 }
 
-#blog .blog-details a :hover::after {
+#blog .blog-details a:hover::after {
     background-color: #40709b;
 }
 
@@ -707,18 +843,18 @@ footer .copyright {
     z-index: -9;
 }
 
-#page-header.about-header {
-    background-image: url("about.png");
-}
-
 #about-head {
     display: flex;
     align-items: center;
+    padding: 80px;
+    gap: 40px;
+    background-color: #fff;
 }
 
 #about-head img {
     width: 50%;
     height: auto;
+    border-radius: 8px;
 }
 
 #about-head div {
@@ -727,6 +863,8 @@ footer .copyright {
 
 #about-app {
     text-align: center;
+    padding: 60px 80px;
+    background-color: #f9f9f9;
 }
 
 #about-app .img {
@@ -739,12 +877,16 @@ footer .copyright {
     width: 100%;
     height: 100%;
     border-radius: 20px;
+    object-fit: cover;
 }
 
 #contact-details {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 80px;
+    background-color: #fff;
+    gap: 40px;
 }
 
 #contact-details .details {
@@ -754,6 +896,7 @@ footer .copyright {
 #contact-details .details span,
 #form-details form span {
     font-size: 12px;
+    color: #465b52;
 }
 
 #contact-details .details h2,
@@ -761,11 +904,13 @@ footer .copyright {
     font-size: 26px;
     line-height: 35px;
     padding: 20px 0;
+    color: #38355f;
 }
 
 #contact-details .details h3 {
     font-size: 26px;
     padding-bottom: 15px;
+    color: #465b52;
 }
 
 #contact-details .details li {
@@ -777,21 +922,26 @@ footer .copyright {
 #contact-details .details li i {
     font-size: 14px;
     padding-right: 22px;
+    color: #515d8c;
 }
 
 #contact-details .details li p {
     margin: 0;
     font-size: 14px;
+    color: #465b52;
 }
 
 #contact-details .map {
     width: 55%;
     height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 #contact-details .map iframe {
     width: 100%;
     height: 100%;
+    border: none;
 }
 
 #form-details {
@@ -800,6 +950,9 @@ footer .copyright {
     margin: 30px;
     padding: 80px;
     border: 1px solid #464d5b;
+    border-radius: 8px;
+    background-color: #fff;
+    gap: 40px;
 }
 
 #form-details form {
@@ -813,33 +966,54 @@ footer .copyright {
 #form-details form textarea {
     width: 100%;
     padding: 12px 15px;
-    outline: none;
     margin-bottom: 20px;
     border: 1px solid #464d5b;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+    color: #465b52;
 }
 
 #form-details form button {
     background-color: #515d8c;
     color: #e3e3eb;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#form-details form button:hover {
+    background-color: #3b4b72;
+}
+
+#form-details .people {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 #form-details .people div {
-    padding-bottom: 25px;
     display: flex;
     align-items: flex-start;
+    gap: 15px;
 }
 
 #form-details .people div img {
     width: 65px;
     height: 65px;
     object-fit: cover;
-    margin-right: 15px;
+    border-radius: 50%;
 }
 
 #form-details .people div p {
     margin: 0;
     font-size: 13px;
     line-height: 25px;
+    color: #465b52;
 }
 
 #form-details .people div p span {
@@ -851,6 +1025,7 @@ footer .copyright {
 
 #cart {
     overflow-x: auto;
+    margin: 40px 80px;
 }
 
 #cart table {
@@ -862,6 +1037,7 @@ footer .copyright {
 
 #cart table img {
     width: 80px;
+    border-radius: 4px;
 }
 
 #cart table td:nth-child(1) {
@@ -889,6 +1065,9 @@ footer .copyright {
 #cart table td:nth-child(5) input {
     width: 70px;
     padding: 10px 5px 10px 15px;
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+    outline: none;
 }
 
 #cart table thead {
@@ -902,20 +1081,21 @@ footer .copyright {
     text-transform: uppercase;
     font-size: 13px;
     padding: 18px 0;
+    color: #38355f;
 }
 
 #cart table tbody tr td {
     padding-top: 15px;
-}
-
-#cart table tbody td {
     font-size: 13px;
+    color: #465b52;
 }
 
 #cart-add {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 40px 80px;
+    gap: 0px;
 }
 
 #coupon {
@@ -926,6 +1106,8 @@ footer .copyright {
 #coupon h3,
 #subtotal h3 {
     padding-bottom: 15px;
+    font-size: 18px;
+    color: #38355f;
 }
 
 #coupon input {
@@ -934,11 +1116,24 @@ footer .copyright {
     width: 60%;
     margin-right: 10px;
     border: 1px solid #464d5b;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #465b52;
 }
 
-#coupon button,
-#subtotal button {
+#coupon button {
     padding: 12px 20px;
+    background-color: #515d8c;
+    color: #f8f8fa;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+#coupon button:hover {
+    background-color: #3b4b72;
 }
 
 #subtotal {
@@ -946,6 +1141,8 @@ footer .copyright {
     margin-bottom: 30px;
     border: 1px solid #464d5b;
     padding: 30px;
+    border-radius: 8px;
+    background-color: #fff;
 }
 
 #subtotal table {
@@ -959,6 +1156,17 @@ footer .copyright {
     border: 1px solid #464d5b;
     padding: 10px;
     font-size: 13px;
+    color: #465b52;
+}
+
+hr,
+.divider {
+    border: none;
+    height: 2px;
+    background-color: #cce7d0;
+    margin: 40px auto;
+    width: 80%;
+    border-radius: 1px;
 }
 
 @media (max-width: 799px) {
@@ -969,7 +1177,7 @@ footer .copyright {
     #navbar {
         display: flex;
         flex-direction: column;
-        align-items: first baseline;
+        align-items: flex-start;
         justify-content: flex-start;
         position: fixed;
         top: 0;
@@ -979,11 +1187,11 @@ footer .copyright {
         background-color: #dfd9e3;
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
         padding: 80px 0 0 10px;
-        transition: 0.3s;
+        transition: 0.3s ease;
     }
 
     #navbar.active {
-        right: 0px;
+        right: 0;
     }
 
     #navbar li {
@@ -991,8 +1199,7 @@ footer .copyright {
     }
 
     #mobile {
-        display: block;
-        align-items: center;
+        display: flex;
     }
 
     #mobile i {
@@ -1002,7 +1209,7 @@ footer .copyright {
     }
 
     #close {
-        display: initial;
+        display: block;
         position: absolute;
         top: 30px;
         left: 30px;
@@ -1016,7 +1223,7 @@ footer .copyright {
 
     #fir-pg {
         height: 70vh;
-        padding: 0 80px;
+        padding: 0 40px;
         background-position: top 30% right 30%;
     }
 
@@ -1028,12 +1235,18 @@ footer .copyright {
         margin: 15px 15px;
     }
 
+    #product1 {
+        padding: 40px 40px;
+    }
+
     #product1 .prd-cont {
-        justify-content: center;
+        gap: 15px;
     }
 
     #product1 .prd {
-        margin: 15px;
+        flex: 1 1 calc(50% - 30px);
+        max-width: calc(50% - 30px);
+        margin: 0 auto;
     }
 
     #banner {
@@ -1041,7 +1254,8 @@ footer .copyright {
     }
 
     #sm-banner .banner-box {
-        min-width: 100%;
+        flex: 1 1 100%;
+        min-width: unset;
         height: 30vh;
     }
 
@@ -1050,25 +1264,122 @@ footer .copyright {
     }
 
     #banner3 .banner-box {
-        width: 28%;
+        flex: 1 1 calc(50% - 20px);
+        width: unset;
+    }
+
+    #newsletter {
+        padding: 40px 20px;
+        flex-direction: column;
     }
 
     #newsletter .form {
-        width: 70%;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    footer .copyright {
+        text-align: start;
+    }
+
+    #prodetails {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    #prodetails .single-pro-image {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #prodetails .single-pro-details {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    #blog .blog-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 60px;
+    }
+
+    #blog {
+        padding: 100px 20px 0 20px;
+    }
+
+    #blog .blog-img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    #blog .blog-details {
+        width: 100%;
+    }
+
+    #about-head {
+        flex-direction: column;
+    }
+
+    #about-head .img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    #about-head div {
+        padding-left: 0;
+    }
+
+    #about-app .img {
+        width: 100%;
+    }
+
+    #contact-details {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    #contact-details .details {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #contact-details .map {
+        width: 100%;
+        height: 300px;
     }
 
     #form-details {
-        padding: 40px;
+        margin: 10px;
+        padding: 30px 10px;
+        flex-wrap: wrap;
     }
 
     #form-details form {
-        width: 50%;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #cart-add {
+        flex-direction: column;
+        margin: 20px 20px;
+    }
+
+    #coupon {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #subtotal {
+        width: 100%;
+        padding: 20px;
     }
 }
 
 @media (max-width: 477px) {
     .section-p1 {
-        padding: 40px 40px;
+        padding: 40px 20px;
     }
 
     #header {
@@ -1093,12 +1404,18 @@ footer .copyright {
     }
 
     #features .fe-box {
-        width: 155px;
+        flex: 1 1 calc(100% - 20px);
+        max-width: unset;
         margin: 0 0 15px 0;
     }
 
+    #product1 .prd-cont {
+        gap: 10px;
+    }
+
     #product1 .prd {
-        width: 100%;
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 
     #banner {
@@ -1123,6 +1440,7 @@ footer .copyright {
 
     #newsletter {
         padding: 40px 20px;
+        flex-direction: column;
     }
 
     #newsletter .form {
@@ -1134,32 +1452,21 @@ footer .copyright {
     }
 
     #prodetails {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #prodetails .single-pro-image {
-        width: 100%;
-        margin-right: 0px;
-    }
-
-    #prodetails .single-pro-image {
-        width: 100%;
+        padding: 10px;
     }
 
     #blog .blog-box {
-        display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
 
     #blog {
-        padding: 100px 20px 0 20px;
+        padding: 80px 20px 0 20px;
     }
 
     #blog .blog-img {
         width: 100%;
-        margin-right: 0px;
+        margin-right: 0;
         margin-bottom: 30px;
     }
 
@@ -1173,12 +1480,11 @@ footer .copyright {
 
     #about-head .img {
         width: 100%;
-        height: auto;
         margin-bottom: 20px;
     }
 
     #about-head div {
-        padding-left: 0px;
+        padding-left: 0;
     }
 
     #about-app .img {
@@ -1196,22 +1502,22 @@ footer .copyright {
 
     #contact-details .map {
         width: 100%;
-        height: 400px;
+        height: 300px;
     }
 
     #form-details {
+        padding: 20px 10px;
         margin: 10px;
-        padding: 30px 10px;
-        flex-wrap: wrap;
     }
 
     #form-details form {
         width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     #cart-add {
         flex-direction: column;
+        margin: 10px;
     }
 
     #coupon {
